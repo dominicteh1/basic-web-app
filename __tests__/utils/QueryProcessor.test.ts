@@ -17,4 +17,14 @@ describe("QueryProcessor", () => {
             "writer in the English language and the world's pre-eminent dramatist."
           ));
     });
+    test('should return capital of france', () => {
+        const query = "capital of france";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("Paris");
+    });
+    test('should return andrew id', () => {
+        const query = "andrew id";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("dteh");
+    });
 });
