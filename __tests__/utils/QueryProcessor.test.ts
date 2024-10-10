@@ -47,4 +47,9 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("266");
     });
+    test('should return square and cube of numbers', () => {
+        const query = "Which of the following numbers is both a square and a cube: 64, 81, 100, 121?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("64");
+    });
 });
