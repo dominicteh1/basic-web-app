@@ -15,7 +15,12 @@ export default function QueryProcessor(query: string): string {
     return "128";
   } else if (query.toLowerCase().includes("Which of the following numbers is the largest: 97, 4, 78?")) {
     return "97";
-  }
+  } else if (query.toLowerCase().includes("largest number")) {
+    const numbers = query.match(/\d+/g)?.map(Number);
+    if (numbers && numbers.length > 0) {
+      return Math.max(...numbers).toString();
+    }
+  } 
 
   return "";
 }
