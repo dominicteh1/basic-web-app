@@ -67,4 +67,9 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("5.153775207320113e+61");
     });
+    test('should return result of complex arithmetic operation', () => {
+        const query = "What is 41 multiplied by 48 plus 38?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("2006");
+    });
 });
