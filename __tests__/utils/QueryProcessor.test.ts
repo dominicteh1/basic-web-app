@@ -32,4 +32,9 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("Dominic Reem Jullia");
     });
+    test('should return 128', () => {
+        const query = "What is 92 plus 36?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("128");
+    });
 });
