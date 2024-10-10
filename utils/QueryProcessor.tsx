@@ -40,7 +40,27 @@ export default function QueryProcessor(query: string): string {
         return result.toString();
       }
     }
-  }
+  } 
+  else if (query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
+    const numbers = query.match(/\d+/g)?.map(Number);
+    if (numbers && numbers.length > 0) {
+      const isSquareAndCube = (num: number) => {
+      const sqrt = Math.sqrt(num);
+      const cbrt = Math.cbrt(num);
+      return Number.isInteger(sqrt) && Number.isInteger(cbrt);
+      };
+      const result = numbers.find(isSquareAndCube);
+      if (result !== undefined) {
+      return result.toString();
+      }
+    }
+    } 
+    else if (query.toLowerCase().includes("minus")) {
+      const numbers = query.match(/\d+/g)?.map(Number);
+      if (numbers && numbers.length === 2) {
+        return (numbers[0] - numbers[1]).toString();
+      }
+    }
 
   return "";
 }
