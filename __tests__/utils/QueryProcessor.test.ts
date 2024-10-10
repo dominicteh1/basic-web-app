@@ -62,4 +62,9 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("43");
     });
+    test('should return power of numbers', () => {
+        const query = "What is 9 to the power of 65?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("5.153775207320113e+61");
+    });
 });
