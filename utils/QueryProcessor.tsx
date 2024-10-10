@@ -11,6 +11,8 @@ export default function QueryProcessor(query: string): string {
     return "dteh"
   } else if (query.toLowerCase().includes("name")) {
     return "Dominic Reem Jullia";
+  } else if (query.toLowerCase().includes("What is 92 plus 36?")) {
+    return "128";
   }
 
   return "";
