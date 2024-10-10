@@ -32,9 +32,14 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("Dominic Reem Jullia");
     });
-    test('should return 128', () => {
-        const query = "What is 92 plus 36?";
+    test('should return largest number', () => {
+        const query = "Which of the following numbers is the largest: 9, 99, 35?";
         const response: string = QueryProcessor(query);
-        expect(response).toBe("128");
+        expect(response).toBe("99");
+    });
+    test('should return sum of numbers', () => {
+        const query = "What is 19 plus 14?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("33");
     });
 });

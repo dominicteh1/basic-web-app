@@ -11,7 +11,7 @@ export default function QueryProcessor(query: string): string {
     return "dteh"
   } else if (query.toLowerCase().includes("name")) {
     return "Dominic Reem Jullia";
-  } else if (query.toLowerCase().includes("Which of the following numbers is the largest")) {
+  } else if (query.toLowerCase().includes("which of the following numbers is the largest")) {
     const numbers = query.match(/\d+/g)?.map(Number);
     if (numbers && numbers.length > 0) {
       return Math.max(...numbers).toString();
@@ -21,7 +21,7 @@ export default function QueryProcessor(query: string): string {
     if (numbers && numbers.length > 0) {
       return numbers.reduce((acc, num) => acc + num, 0).toString();
     }
-  } 
+  }
 
   return "";
 }
