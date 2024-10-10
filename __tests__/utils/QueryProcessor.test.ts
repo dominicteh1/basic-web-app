@@ -42,4 +42,9 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("33");
     });
+    test('should return product of numbers', () => {
+        const query = "What is 19 multiplied by 14?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("266");
+    });
 });
