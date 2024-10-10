@@ -21,6 +21,12 @@ export default function QueryProcessor(query: string): string {
     if (numbers && numbers.length > 0) {
       return numbers.reduce((acc, num) => acc + num, 0).toString();
     }
+  } 
+  else if (query.toLowerCase().includes("multiplied by")) {
+    const numbers = query.match(/\d+/g)?.map(Number);
+    if (numbers && numbers.length === 2) {
+      return (numbers[0] * numbers[1]).toString();
+    }
   }
 
   return "";
