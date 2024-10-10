@@ -78,6 +78,15 @@ export default function QueryProcessor(query: string): string {
     if (numbers && numbers.length === 2) {
       return Math.pow(numbers[0], numbers[1]).toString();
     }
+  } 
+  else if (query.toLowerCase().includes("multiplied by") && query.toLowerCase().includes("plus")) {
+    const parts = query.split("plus");
+    const firstPart = parts[0].match(/\d+/g)?.map(Number);
+    const secondPart = parts[1].match(/\d+/g)?.map(Number);
+    if (firstPart && firstPart.length === 2 && secondPart && secondPart.length === 1) {
+      const product = firstPart[0] * firstPart[1];
+      return (product + secondPart[0]).toString();
+    }
   }
   return "";
 }
