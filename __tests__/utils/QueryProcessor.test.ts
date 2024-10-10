@@ -52,4 +52,9 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("64");
     });
+    test('should return difference of numbers', () => {
+        const query = "What is 19 minus 14?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("5");
+    });
 });

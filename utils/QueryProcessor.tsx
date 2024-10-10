@@ -40,8 +40,7 @@ export default function QueryProcessor(query: string): string {
         return result.toString();
       }
     }
-  } 
-  else if (query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
+  } else if (query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
     const numbers = query.match(/\d+/g)?.map(Number);
     if (numbers && numbers.length > 0) {
       const isSquareAndCube = (num: number) => {
@@ -54,8 +53,7 @@ export default function QueryProcessor(query: string): string {
       return result.toString();
       }
     }
-    } 
-    else if (query.toLowerCase().includes("minus")) {
+    } else if (query.toLowerCase().includes("minus")) {
       const numbers = query.match(/\d+/g)?.map(Number);
       if (numbers && numbers.length === 2) {
         return (numbers[0] - numbers[1]).toString();
