@@ -9,10 +9,9 @@ export default function QueryProcessor(query: string): string {
     return "Paris";
   } else if (query.toLowerCase().includes("andrew id")) {
     return "dteh"
-  } else if (query.toLowerCase().includes("what is your name")) {
+  } else if (query.toLowerCase().includes("name")) {
     return "Dominic Reem Jullia";
   }
-  else {
-    return "";
-  }
+
+  return "";
 }
